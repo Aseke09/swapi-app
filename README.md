@@ -29,4 +29,4 @@ Built with React, TypeScript, and Bootstrap, featuring a clean and responsive in
     - Install dependencies: npm install
     - Run development server: npm run dev
     - Access at http://localhost:5173
-    project is also available on githubpages [SWAPI](https://aseke09.github.io/login)
+    - project is also available on githubpages 
