@@ -1,50 +1,32 @@
-# React + TypeScript + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+# Project based on SWAPI API 
+A React application for exploring Star Wars universe data using the SWAPI.tech API. 
+Built with React, TypeScript, and Bootstrap, featuring a clean and responsive interface.
+## Authentication
+   -Username: admin
+   -Password: password
+## Features
+   -Browse Star Wars characters, species, planets, and starships
+   -Detailed view for each entity with comprehensive information
+   -Edit capabilities for character details (stored in local state)
+   -Form validation using Yup and React Hook Form
+   -Pagination support for listing pages
+   -Responsive design with Bootstrap
+## Tech Stack
+   -React + TypeScript
+   -React Router for navigation
+   -React Hook Form + Yup for form handling
+   -Axios for API requests
+   -Bootstrap for styling
+   -Vite for development
+## API 
+   Uses the SWAPI.tech API endpoints:
+   -/api/people
+   -/api/species
+   -/api/planets
+   -/api/starships
+## Setup
+    -Clone repository
+    -Install dependencies: npm install
+    -Run development server: npm run dev
+    -Access at http://localhost:5173
+    project is also available on githubpages [SWAPI](https://aseke09.github.io/login)
