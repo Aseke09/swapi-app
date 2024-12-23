@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Resources } from '../types/types';
 
 export const Dashboard = () => {
-    const [resources, setResources] = useState<Resources[]>();
+    const [resources, setResources] = useState<Resources>();
     const navigate = useNavigate();
 
     const getResourceIcon = (key: string): string => {
@@ -21,11 +21,18 @@ export const Dashboard = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('https://www.swapi.tech/api')
-                const { people, planets, species, starships } = response.data.result;
-                if(response.data.result){
-                    setResources({people, planets, species, starships});
-                }
+                const response = await axios.get('https://www.swapi.tech/api');
+
+                const filteredResources: Resources = {};
+                const desiredResources = ['people', 'planets', 'species', 'starships'];
+                
+                Object.entries(response.data.result).forEach(([key, value]) => {
+                  if (desiredResources.includes(key)) {
+                    filteredResources[key as keyof Resources] = value as string;
+                  }
+                });
+                    setResources(filteredResources);
+                
                 
             } catch (error) {
                 console.error('Error fetching resources:', error)

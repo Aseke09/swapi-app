@@ -11,9 +11,9 @@ export interface LoginCredentials {
 
 export interface Resources {
   people?: string;
-  planets: string;
-  species: string;
-  starships: string;
+  planets?: string;
+  species?: string;
+  starships?: string;
 }
   
 export interface ResourceCard {
